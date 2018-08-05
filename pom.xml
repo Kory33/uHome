@@ -1,128 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>uk.co.ks07</groupId>
-	<artifactId>uhome</artifactId>
-	<version>1.5.3</version>
-	<packaging>jar</packaging>
+    <groupId>uk.co.ks07</groupId>
+    <artifactId>uhome</artifactId>
+    <version>1.5.3</version>
+    <packaging>jar</packaging>
 
-	<name>uHome</name>
-	<description>A multiple home plugin for Bukkit.</description>
-	<url>http://dev.bukkit.org/server-mods/uhome/</url>
+    <name>uHome</name>
+    <description>A multiple home plugin for Bukkit.</description>
+    <url>http://dev.bukkit.org/server-mods/uhome/</url>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-	<repositories>
-		<repository>
-		<id>spigot-repo</id>
-		<url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
-	</repository>
-	<repository>
-		<id>vault-repo</id>
-		<url>http://nexus.hc.to/content/repositories/pub_releases</url>
-	</repository>
-	</repositories>
+    <repositories>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>vault-repo</id>
+            <url>http://nexus.hc.to/content/repositories/pub_releases</url>
+        </repository>
+    </repositories>
 
-	<dependencies>
-	<dependency>
-		<groupId>org.spigotmc</groupId>
-		<artifactId>spigot-api</artifactId>
-		<version>1.10.2-R0.1-SNAPSHOT</version>
-		<scope>provided</scope>
-	</dependency>
-	<dependency>
-		<groupId>net.milkbowl.vault</groupId>
-		<artifactId>VaultAPI</artifactId>
-		<version>1.6</version>
-		<scope>provided</scope>
-	</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.10.2-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.milkbowl.vault</groupId>
+            <artifactId>VaultAPI</artifactId>
+            <version>1.6</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<finalName>${artifactId}-${version}</finalName>
-		<defaultGoal>install</defaultGoal>
-		<directory>${basedir}/target</directory>
-		<sourceDirectory>${basedir}/src/main/java</sourceDirectory>
-		<outputDirectory>${basedir}/target/classes</outputDirectory>
+    <build>
+        <finalName>${artifactId}-${version}</finalName>
+        <defaultGoal>install</defaultGoal>
+        <directory>${basedir}/target</directory>
+        <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+        <outputDirectory>${basedir}/target/classes</outputDirectory>
 
-		<resources>
-			<resource>
-				<targetPath>.</targetPath>
-				<filtering>true</filtering>
-				<directory>${basedir}/src/main/resources/</directory>
-				<includes>
-					<include>plugin.yml</include>
-				</includes>
-			</resource>
+        <resources>
+            <resource>
+                <targetPath>.</targetPath>
+                <filtering>true</filtering>
+                <directory>${basedir}/src/main/resources/</directory>
+                <includes>
+                    <include>plugin.yml</include>
+                </includes>
+            </resource>
 
-			<resource>
-				<targetPath>.</targetPath>
-				<filtering>false</filtering>
-				<directory>${basedir}/src/main/resources/</directory>
-				<includes>
-					<include>config.yml</include>
-					<include>customlocale.properties</include>
-					<include>uk/co/ks07/uhome/locale/uhome/uhome_en.properties</include>
-					<include>uk/co/ks07/uhome/locale/uhome/uhome_ru.properties</include>
-				</includes>
-			</resource>
-		</resources>
+            <resource>
+                <targetPath>.</targetPath>
+                <filtering>false</filtering>
+                <directory>${basedir}/src/main/resources/</directory>
+                <includes>
+                    <include>config.yml</include>
+                    <include>customlocale.properties</include>
+                    <include>uk/co/ks07/uhome/locale/uhome/uhome_en.properties</include>
+                    <include>uk/co/ks07/uhome/locale/uhome/uhome_ru.properties</include>
+                </includes>
+            </resource>
+        </resources>
 
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
-				<configuration>
-					<fork>true</fork>
-					<showDeprecation>true</showDeprecation>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <fork>true</fork>
+                    <showDeprecation>true</showDeprecation>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.3.2</version>
-			</plugin>
-		</plugins>
-	</build>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.2</version>
+            </plugin>
+        </plugins>
+    </build>
 
-	<licenses>
-		<license>
-			<name>GNU General Public License, Version 3.0 (GPLv3)</name>
-			<url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
-			<distribution>repo</distribution>
-			<comments>The GNU General Public License is a free, copyleft license for software and other kinds of works.</comments>
-		</license>
-	</licenses>
+    <licenses>
+        <license>
+            <name>GNU General Public License, Version 3.0 (GPLv3)</name>
+            <url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>The GNU General Public License is a free, copyleft license for software and other kinds of
+                works.
+            </comments>
+        </license>
+    </licenses>
 
-	<scm>
-		<connection>scm:git:git://github.com/ks07/uHome.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com/ks07/uHome.git</developerConnection>
-		<url>https://github.com/ks07/uHome</url>
-		<tag>HEAD</tag>
-	</scm>
+    <scm>
+        <connection>scm:git:git://github.com/ks07/uHome.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/ks07/uHome.git</developerConnection>
+        <url>https://github.com/ks07/uHome</url>
+        <tag>HEAD</tag>
+    </scm>
 
-	<issueManagement>
-		<system>Bukkit Dev</system>
-		<url>http://dev.bukkit.org/server-mods/uhome/tickets/</url>
-	</issueManagement>
+    <issueManagement>
+        <system>Bukkit Dev</system>
+        <url>http://dev.bukkit.org/server-mods/uhome/tickets/</url>
+    </issueManagement>
 
-	<developers>
-		<developer>
-			<id>ks07</id>
-			<name>ks07</name>
-			<email>ks07@ultimateminecraft.net</email>
-			<url>https://github.com/ks07/</url>
-			<roles>
-				<role>developer</role>
-			</roles>
-		</developer>
-	</developers>
+    <developers>
+        <developer>
+            <id>ks07</id>
+            <name>ks07</name>
+            <email>ks07@ultimateminecraft.net</email>
+            <url>https://github.com/ks07/</url>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
 </project>
