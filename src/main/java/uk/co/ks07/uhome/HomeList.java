@@ -134,7 +134,7 @@ public class HomeList {
     public boolean checkWarpCosts(Player player) {
     	if ((HomeConfig.enableEcon) && (this.plugin.economy != null) && (! SuperPermsManager.hasPermission(player, SuperPermsManager.bypassEcon))) {
             if (HomeConfig.warpCost > 0) {
-                EconomyResponse resp = this.plugin.economy.withdrawPlayer(player.getName(), HomeConfig.warpCost);
+                EconomyResponse resp = this.plugin.economy.withdrawPlayer(player, HomeConfig.warpCost);
                 if (resp.transactionSuccess()) {
                     HashMap<String, String> params = new HashMap<String, String>();
                     params.put("COST", Integer.toString(HomeConfig.warpCost));
@@ -156,7 +156,7 @@ public class HomeList {
     public boolean checkSetCosts(Player player) {
     	if ((HomeConfig.enableEcon) && (this.plugin.economy != null) && (! SuperPermsManager.hasPermission(player, SuperPermsManager.bypassEcon))) {
             if (HomeConfig.setCost > 0) {
-                EconomyResponse resp = this.plugin.economy.withdrawPlayer(player.getName(), HomeConfig.setCost);
+                EconomyResponse resp = this.plugin.economy.withdrawPlayer(player, HomeConfig.setCost);
                 if (resp.transactionSuccess()) {
                     HashMap<String, String> params = new HashMap<String, String>();
                     params.put("COST", Integer.toString(HomeConfig.warpCost));
